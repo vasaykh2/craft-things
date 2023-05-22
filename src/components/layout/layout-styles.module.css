@@ -1,0 +1,32 @@
+.layout{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 282px);
+  /*grid-template-rows: repeat(auto-fill, 361px);*/
+  row-gap: 16px;
+  column-gap: 20px;
+  padding-bottom: 67px;
+}
+
+.layout {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.layout::-webkit-scrollbar {
+  width: 8px;
+}
+
+.layout::-webkit-scrollbar-track {
+  background-color: #2f2f37;
+  
+}
+
+.layout::-webkit-scrollbar-thumb {
+  background-color: #8585ad;
+  box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+  height: 10vh;
+}

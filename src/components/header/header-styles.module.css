@@ -1,0 +1,33 @@
+.header {
+  background-color: #29033f;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  font-size: calc(14px + 2vmin);
+  color: rgb(233, 211, 13);
+  padding: 10px;
+}
+
+.logo {
+  height: 20vmin;
+  pointer-events: none;
+}
+
+.link {
+  color: #61dafb;
+}
+
+.description {
+  margin: 0;
+  padding: 0 0 0 30px;
+  font-family: 'tucsontwo', sans-serif;
+  font-weight: 400;
+  font-style: normal;  
+  font-size: 50px;
+  line-height: 58px;
+  max-width: 600px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
