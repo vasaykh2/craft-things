@@ -1,7 +1,7 @@
 //import { useLocation } from 'react-router-dom';
-import logo from '../../vendor/logo.svg';
-import '../../vendor/fonts.css';
 import { FC } from 'react';
+import logo from '../../images/logo.svg';
+import '../../vendor/fonts.css';
 
 import styles from './header-styles.module.css';
 

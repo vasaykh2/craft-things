@@ -1,0 +1,103 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  max-width: 282px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: grab;
+  text-decoration: none;
+  transition: opacity 0.5s linear;
+}
+
+.card:hover {
+  opacity: 0.8;
+}
+
+.image {
+  width: 282px;
+  height: 282px;
+  border-radius: 10px 10px 0 0;
+  border: none;
+  object-fit: cover;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.description {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px auto 30px;
+  min-width: 246px;
+}
+
+.title {
+  font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0;
+  max-width: calc(246px - 22px);
+}
+
+.likes {
+  display: flex;
+  flex-direction: column;
+  max-height: 35px;
+}
+
+.likesButton {
+  width: 22px;
+  height: 19px;
+  background-color: transparent;
+  background-size: contain;
+  border: 0;
+  padding: 0;
+  transition: opacity 0.2s linear;
+  cursor: pointer;
+  background-image: url(../../images/like-button.svg);
+}
+
+.likesButton:hover {
+  opacity: 0.5;
+}
+
+.likeCount {
+  font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  color: #000;
+  margin: 0;
+}
+
+.deleteButton {
+  background-image: url(../../images/trash.svg);
+  background-color: transparent;
+  background-size: contain;
+  width: 18px;
+  height: 19px;
+  border: 0;
+  padding: 0;
+  transition: opacity 0.2s linear;
+  cursor: pointer;
+  position: relative;
+  top: -344px;
+  right: -240px;
+}
+
+.deleteButton:hover {
+  opacity: 0.5;
+}
