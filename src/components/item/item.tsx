@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useSelector, useDispatch } from '../../types/store';
 
 import styles from './item-styles.module.css';
 //import { useDrag } from 'react-dnd';
@@ -13,6 +14,8 @@ type TItemProps = {
 
 const Item: FC<TItemProps> = ({ item, onRightClick }) => {
   const location = useLocation();
+
+  const { items } = useSelector((state) => state.items);
 
  /* const [, dragRef] = useDrag({
     type: 'items',
