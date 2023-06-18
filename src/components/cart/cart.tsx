@@ -1,21 +1,18 @@
 //import { useLocation } from 'react-router-dom';
 import { FC } from 'react';
-import logo from '../../images/logo.svg';
-import '../../fonts/fonts.css';
+import cart from '../../images/shopping-basket-add256_24909.png';
 
-import styles from './header-styles.module.css';
+import styles from './cart-styles.module.css';
 
-const Header: FC = () => {
+const Cart: FC = () => {
   //const { pathname } = useLocation();
 
   return (
-    <header className={styles.header}>
-      <img src={logo} className={styles.logo} alt="logo" />
-      <p className={styles.description}>
-        Добро пожаловать на сайт работ Марии Ивановой!
-      </p>
-    </header>
+    <section className={styles.cartContainer}>
+      <img src={cart} className={styles.cartImg} alt="logo" />
+      <p className={styles.description}></p>
+    </section>
   );
 };
 
-export default Header;
+export default Cart;

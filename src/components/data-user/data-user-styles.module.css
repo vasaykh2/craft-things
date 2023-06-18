@@ -1,5 +1,5 @@
 .container {
-  background-color: #b899ca;
+  background-color: rgba(185, 154, 203, 0);
   min-height: 80px;
   min-width: 200px;
   display: flex;
@@ -8,6 +8,11 @@
   justify-content: start;
   font-size: calc(14px + 2vmin);
   padding: 10px;
-  border: 3px solid rgb(63, 22, 68);
+  border: 3px solid rgba(63, 22, 68, 0);
   border-radius: 10px;
+  transition: background-color 0.2s linear;
+}
+
+.container:hover {
+  background-color: rgba(185, 154, 203, 0.5);
 }

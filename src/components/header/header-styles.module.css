@@ -31,3 +31,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.clipLoader {
+  color: #e9d30d
+}

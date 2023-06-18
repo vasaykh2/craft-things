@@ -1,8 +1,8 @@
-.header {
+.cartContainer {
   background-color: #29033f;
-  min-height: 10vh;
+  min-height: 1vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: start;
   font-size: calc(14px + 2vmin);
@@ -10,13 +10,9 @@
   padding: 10px;
 }
 
-.logo {
-  height: 20vmin;
-  pointer-events: none;
-}
-
-.link {
-  color: #61dafb;
+.cartImg {
+  height: 7vmin;
+  cursor: pointer;
 }
 
 .description {
