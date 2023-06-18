@@ -7,6 +7,8 @@ import ClipLoader from 'react-spinners/ClipLoader';
 import {
   DataUser,
   Cart,
+  Track,
+  User,
   //Modal,
   //ModalOverlay,
   //ProtectedRouteElement,
@@ -25,7 +27,9 @@ const Header: FC = () => {
       <p className={styles.description}>
         Добро пожаловать на сайт работ Марии Ивановой! <ClipLoader color={styles.clipLoader} loading={!itemsLoad} />
       </p>
-      <DataUser>        
+      <DataUser>
+        <User/>
+        <Track/>        
         <Cart/>
       </DataUser>
     </header>

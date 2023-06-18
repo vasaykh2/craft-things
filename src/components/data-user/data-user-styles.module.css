@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: start;
   font-size: calc(14px + 2vmin);
-  padding: 10px;
+  padding: 0px;
   border: 3px solid rgba(63, 22, 68, 0);
   border-radius: 10px;
   transition: background-color 0.2s linear;

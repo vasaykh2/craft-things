@@ -3,6 +3,9 @@ import Layout from './layout/layout';
 import Item from './item/item';
 import DataUser from './data-user/data-user';
 import Cart from './cart/cart';
+import Track from './track/track';
+import User from './user/user';
+
 //import Modal from './modal/modal';
 //import { ModalOverlay } from './modal-overlay/modal-overlay';
 //import ProtectedRouteElement from './protected-route-element/protected-route-element';
@@ -14,6 +17,8 @@ export {
   Item,
   DataUser,
   Cart,
+  Track,
+  User,
   //Modal,
   //ModalOverlay,  
   //ProtectedRouteElement,

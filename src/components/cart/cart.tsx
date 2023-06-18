@@ -9,7 +9,7 @@ const Cart: FC = () => {
 
   return (
     <section className={styles.cartContainer}>
-      <img src={cart} className={styles.cartImg} alt="logo" />
+      <img src={cart} className={styles.cartImg} alt="Корзина" />
       <p className={styles.description}></p>
     </section>
   );
