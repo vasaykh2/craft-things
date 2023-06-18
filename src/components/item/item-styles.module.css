@@ -56,7 +56,7 @@
   max-height: 35px;
 }
 
-.likesButton {
+.buttonLikes {
   width: 22px;
   height: 19px;
   background-color: transparent;
@@ -68,7 +68,23 @@
   background-image: url(../../images/like-button.svg);
 }
 
-.likesButton:hover {
+.buttonLikes:hover {
+  opacity: 0.5;
+}
+
+.buttonMyLikes {
+  width: 22px;
+  height: 19px;
+  background-color: transparent;
+  background-size: contain;
+  border: 0;
+  padding: 0;
+  transition: opacity 0.2s linear;
+  cursor: pointer;
+  background-image: url(../../images/like-button_active.svg);
+}
+
+.buttonMyLikes:hover {
   opacity: 0.5;
 }
 

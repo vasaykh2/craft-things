@@ -15,7 +15,10 @@ type TItemProps = {
 const Item: FC<TItemProps> = ({ item, onRightClick }) => {
   const location = useLocation();
 
-  const { items } = useSelector((state) => state.items);
+  const { userInfo } = useSelector((state) => state.user);
+  const likeCount = item.likes.length;
+  const isMyLike = userInfo && item.likes.find(el => el._id === userInfo._id) ? true : false;
+
 
  /* const [, dragRef] = useDrag({
     type: 'items',
@@ -38,8 +41,8 @@ const Item: FC<TItemProps> = ({ item, onRightClick }) => {
         <div className={styles.description}>
           <h2 className={styles.title}>{item.name}</h2>
           <div className={styles.likes}>
-            <button type="button" className={styles.likesButton}></button>
-            <p className={styles.likeCount}>5</p>
+            <button type="button" className={isMyLike ? styles.buttonMyLikes : styles.buttonLikes}></button>
+            <p className={styles.likeCount}>{likeCount}</p>
           </div>
         </div>
         <button className={styles.deleteButton}></button>

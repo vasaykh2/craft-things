@@ -1,15 +1,7 @@
 //import { useLocation } from 'react-router-dom';
 import { FC } from 'react';
-import '../../fonts/fonts.css';
 import logo from '../../images/logo.svg';
-
-import {
-  DataUser,
-  //Modal,
-  //ModalOverlay,
-  //ProtectedRouteElement,
-} from '../index';
-
+import '../../fonts/fonts.css';
 
 import styles from './header-styles.module.css';
 
@@ -22,7 +14,6 @@ const Header: FC = () => {
       <p className={styles.description}>
         Добро пожаловать на сайт работ Марии Ивановой!
       </p>
-      <DataUser></DataUser>
     </header>
   );
 };

@@ -17,11 +17,11 @@
 }
 
 .layout::-webkit-scrollbar-track {
-  background-color: #2f2f37;
+  background-color: #29033f;
 }
 
 .layout::-webkit-scrollbar-thumb {
-  background-color: #8585ad;
+  background-color: #61dafb;
   box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
   height: 10vh;
 }
