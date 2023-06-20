@@ -7,11 +7,11 @@ import {
   Header,
   //Modal,
   //ModalOverlay,
-  //ProtectedRouteElement,
+  ProtectedRouteElement,
 } from '../index';
 import {
   Main,
-  //Login,
+  Login,
   //Register,
   //ForgotPassword,
   //ResetPassword,
@@ -50,6 +50,15 @@ const App: FC = () => {
               secondaryColor='white'
               />
           ) : items.items ? <Main /> : null}/>
+          
+          <Route
+              path='/login'
+              element={
+                <ProtectedRouteElement onlyForAuth={false}>
+                  <Login />
+                </ProtectedRouteElement>
+              }
+            />
       </Routes>
     </div>
   );

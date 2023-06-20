@@ -55,11 +55,9 @@ class Api {
       headers: {
         'Content-type': 'application/json',
         authorization: config.headers.authorization,
-      }      
+      },
     });
   }
-
-
 
   getUserInfo() {
     return this._request(`${this.url}/users/me`, {
@@ -72,7 +70,7 @@ class Api {
   }
 
   async patchUserInfo(name: string, about: string) {
-    return await this._request(`${this.url}/auth/user`, {
+    return await this._request(`${this.url}/users/me`, {
       method: 'PATCH',
       headers: {
         'Content-type': 'application/json',
@@ -80,7 +78,7 @@ class Api {
       },
       body: JSON.stringify({ name, about }),
     });
-  }  
+  }
 }
 
 const api = new Api(BASE_URL);

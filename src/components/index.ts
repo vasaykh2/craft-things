@@ -8,7 +8,7 @@ import User from './user/user';
 
 //import Modal from './modal/modal';
 //import { ModalOverlay } from './modal-overlay/modal-overlay';
-//import ProtectedRouteElement from './protected-route-element/protected-route-element';
+import ProtectedRouteElement from './protected-route-element/protected-route-element';
 
 
 export {
@@ -21,5 +21,5 @@ export {
   User,
   //Modal,
   //ModalOverlay,  
-  //ProtectedRouteElement,
+  ProtectedRouteElement,
 };

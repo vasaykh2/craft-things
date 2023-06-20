@@ -15,7 +15,7 @@ const userInitialState: TUserState = {
   getUserFailed: false,
   patchUserRequest: false,
   patchUserFailed: false,
-  errorMessage: null,
+  message: null,
 };
 
 export const userReducer = (state = userInitialState, action: TUserActions) => {
@@ -50,14 +50,14 @@ export const userReducer = (state = userInitialState, action: TUserActions) => {
         patchUserRequest: false,
         patchUserFailed: false,
         userInfo: action.payload.userInfo,
-        errorMessage: action.payload.message,
+        message: action.payload.message,
       };
     case PATCH_USER_FAILED:
       return {
         ...state,
         patchUserRequest: false,
         patchUserFailed: true,
-        errorMessage: action.payload,
+        message: action.payload,
       };
     default:
       return state;

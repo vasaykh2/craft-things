@@ -4,15 +4,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   font-size: calc(14px + 2vmin);
   color: #e9d30d;
-  padding: 5px;
+  padding: 7px;
 }
 
 .userImg {
   height: 7vmin;
   cursor: pointer;
+  transition: height 0.2s linear;
+}
+
+.userImg:hover {
+  height: 7.5vmin;
 }
 
 .description {

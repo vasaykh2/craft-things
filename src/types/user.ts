@@ -13,7 +13,7 @@ export type TUserActions =
   | TGetUserFailedAction
   | TPatchUserRequestAction
   | TPatchUserSuccessAction
-  | TPatchUserFailedAction
+  | TPatchUserFailedAction;
 
 export type TForm = {
   email?: string;
@@ -23,14 +23,16 @@ export type TForm = {
   token?: string;
 };
 
-export type TRegisterForm = Required<Omit<TForm, 'email' | 'password' | 'token'>>;
+export type TRegisterForm = Required<
+  Omit<TForm, 'email' | 'password' | 'token'>
+>;
 
 export type TUser = {
-  name: string,
-  about: string,
-  avatar: string,
-  _id: string,
-  cohort: string,
+  name: string;
+  about: string;
+  avatar: string;
+  _id: string;
+  cohort: string;
 };
 
 export type TUserState = {
@@ -39,7 +41,7 @@ export type TUserState = {
   getUserFailed: boolean;
   patchUserRequest: boolean;
   patchUserFailed: boolean;
-  errorMessage: string | null;
+  message: string | null;
 };
 
 type TGetUserRequestAction = {

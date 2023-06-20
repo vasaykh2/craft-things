@@ -1,9 +1,7 @@
 import { api } from '../../utils/api';
 //import { setCookie, deleteCookie, getCookie } from '../../utils/cookie';
 import { AppDispatch, AppThunk } from '../../types/store';
-import {
-  TRegisterForm,  
-} from '../../types/user';
+import { TRegisterForm } from '../../types/user';
 
 export const GET_USER_REQUEST: 'GET_USER_REQUEST' = 'GET_USER_REQUEST';
 export const GET_USER_SUCCESS: 'GET_USER_SUCCESS' = 'GET_USER_SUCCESS';
@@ -31,14 +29,11 @@ export const getUserInfo: AppThunk = () => {
         dispatch({
           type: GET_USER_FAILED,
         });
-      })
+      });
   };
 };
 
-export const patchUserInfo: AppThunk = ({
-  name,
-  about,
-}: TRegisterForm) => {
+export const patchUserInfo: AppThunk = ({ name, about }: TRegisterForm) => {
   return function (dispatch: AppDispatch) {
     dispatch({
       type: PATCH_USER_REQUEST,
@@ -47,17 +42,18 @@ export const patchUserInfo: AppThunk = ({
       .patchUserInfo(name, about)
       .then((res) => {
         res &&
-          res.success &&
           dispatch({
             type: PATCH_USER_SUCCESS,
-            payload: { userInfo: res.user, message: 'User info changed' },
+            payload: { userInfo: res, message: 'User info changed' },
           });
+        //console.log(res);
       })
       .catch((err) => {
         dispatch({
           type: PATCH_USER_FAILED,
-          payload: err.message,
+          payload: err,
         });
+        //console.log(err.message);
       });
   };
 };
