@@ -10,9 +10,7 @@ import styles from './main-styles.module.css';
 
 const Main: FC = () => {  
   //const location = useLocation();
-  //const navigate = useNavigate();
-
-  
+  //const navigate = useNavigate();  
   return (
     <main className={styles.blocks}>
       <p>main</p>

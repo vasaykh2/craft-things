@@ -10,7 +10,6 @@ import { useForm } from '../../services/hooks/useForm';
 import { patchUserInfo } from '../../services/actions/user';
 
 import styles from './login.module.css';
-import { Console } from 'console';
 
 const Login: FC = () => {
   const dispatch = useDispatch();
@@ -22,7 +21,7 @@ const Login: FC = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(values);
+    //console.log(values);
     dispatch(patchUserInfo(values));
   };
 

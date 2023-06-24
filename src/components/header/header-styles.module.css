@@ -15,10 +15,6 @@
   pointer-events: none;
 }
 
-.link {
-  color: #61dafb;
-}
-
 .description {
   margin: 0;
   padding: 0 0 0 10px;
@@ -35,3 +31,23 @@
 .clipLoader {
   color: #e9d30d
 }
+
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-self: left;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #61dafb;
+  justify-self: left;  
+}
+
+  .link_active {
+      color: #F2F2F3;
+  }

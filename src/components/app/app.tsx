@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from '../../types/store';
 
 import {
   Header,
+  ProfileForm,
   //Modal,
   //ModalOverlay,
   ProtectedRouteElement,
@@ -15,7 +16,7 @@ import {
   //Register,
   //ForgotPassword,
   //ResetPassword,
-  //Profile,
+  Profile,
   //NotFound,
 } from '../../pages';
 
@@ -39,29 +40,64 @@ const App: FC = () => {
     <div className={styles.app}>
       <Header />
       <Routes location={background || location}>
-            <Route path="/" element={items.itemsLoad ? (
-            <Oval
-              ariaLabel='loading'
-              height={70}
-              width={70}
-              strokeWidth={5}
-              strokeWidthSecondary={2}
-              color='blue'
-              secondaryColor='white'
+        <Route
+          path='/'
+          element={
+            items.itemsLoad ? (
+              <Oval
+                ariaLabel='loading'
+                height={70}
+                width={70}
+                strokeWidth={5}
+                strokeWidthSecondary={2}
+                color='blue'
+                secondaryColor='white'
               />
-          ) : items.items ? <Main /> : null}/>
+            ) : items.items ? (
+              <Main />
+            ) : null
+          }
+        />
+
+        <Route
+          path='/login'
+          element={
+            <ProtectedRouteElement onlyForAuth={false}>
+              <Login />
+            </ProtectedRouteElement>
+          }
+        />
+
+        <Route
+          path='/profile'
+          element={
+            <ProtectedRouteElement onlyForAuth={true}>
+              <Profile />
+            </ProtectedRouteElement>
+          }
+        >
           
-          <Route
-              path='/login'
-              element={
-                <ProtectedRouteElement onlyForAuth={false}>
-                  <Login />
-                </ProtectedRouteElement>
-              }
-            />
+              <Route
+                path=''
+                element={
+                  <ProtectedRouteElement onlyForAuth={true}>
+                    <ProfileForm />
+                  </ProtectedRouteElement>
+                }
+              />
+              {/*<Route
+                path='orders'
+                element={
+                  <ProtectedRouteElement onlyForAuth={true}>
+                    <ProfileOrders />
+                  </ProtectedRouteElement>
+                }
+              />*/}
+              
+        </Route>
       </Routes>
     </div>
   );
-}
+};
 
 export default App;

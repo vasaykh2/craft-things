@@ -7,7 +7,7 @@
   justify-content: flex-start;
   font-size: calc(14px + 2vmin);
   color: #e9d30d;
-  padding: 7px;
+  padding: 0;
 }
 
 .userImg {
@@ -16,9 +16,6 @@
   transition: height 0.2s linear;
 }
 
-.userImg:hover {
-  height: 7.5vmin;
-}
 
 .description {
   margin: 0;
