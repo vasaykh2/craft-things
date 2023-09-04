@@ -1,5 +1,7 @@
 import {
+  //EmailInput,
   Input,
+  PasswordInput,
   Button,
 } from '@ya.praktikum/react-developer-burger-ui-components';
 import { useDispatch, useSelector } from '../../types/store';
@@ -7,7 +9,7 @@ import { FC, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useForm } from '../../services/hooks/useForm';
-import { patchUserInfo } from '../../services/actions/user';
+import { logIn } from '../../services/actions/user';
 
 import styles from './login.module.css';
 
@@ -15,31 +17,39 @@ const Login: FC = () => {
   const dispatch = useDispatch();
   const userInfo = useSelector((state) => state.user.userInfo);
   const { values, handleChange, isValid } = useForm(
-    { name: '', about: '' },
+    { username: '', password: '' },
     false
   );
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     //console.log(values);
-    dispatch(patchUserInfo(values));
+    dispatch(logIn(values));
   };
 
   return (
     <div className={`${styles.container}`}>
       <form className={styles.form} onSubmit={handleSubmit}>
         <h1 className={`${styles.title}  text text_type_main-medium`}>Вход</h1>
-        <Input
-          placeholder='name'
-          name='name'
+        {/*<EmailInput
+          placeholder='E-mail'
+          name='email'
           onChange={(evt) => handleChange(evt)}
-          value={values.name ? values.name : ''}
-        />
+          value={values.email ? values.email : ''}
+  />*/}
         <Input
-          placeholder='about'
-          name='about'
+        type='text'
+        placeholder='Имя'
+        name='username'
+        onChange={(e) => handleChange(e)}
+        value={values.username || ''}
+        icon={'EditIcon'}
+      />
+        <PasswordInput
+          placeholder='Пароль'
+          name='password'
           onChange={(evt) => handleChange(evt)}
-          value={values.about ? values.about : ''}
+          value={values.password ? values.password : ''}
         />
         <Button
           htmlType='submit'

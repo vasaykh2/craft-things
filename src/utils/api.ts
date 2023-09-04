@@ -1,5 +1,5 @@
 import { BASE_URL, config } from './constants';
-//import { setCookie } from './cookie';
+import { setCookie, getCookie } from './cookie';
 
 class Api {
   private url: string;
@@ -36,16 +36,41 @@ class Api {
         authorization: config.headers.authorization,
       },
     });
+    //console.log(getCookie('jwt'));
+  }
+  
+  logUp(username: string, email: string, password: string, about?: string, avatar?: string) {
+    return this._request(`${this.url}/signup`, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({ username, email, password, about, avatar }),
+    });
   }
 
-  async postItems(name: string, link: string) {
+  logIn(username: string, password: string) {
+    return this._request(`${this.url}/signin`, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({ username, password }),
+    });
+  }
+
+  logOut() {
+    sessionStorage.removeItem("auth_token");
+  }
+
+  async postItems(name: string, description: string,  image: string, price: number) {
     return await this._request(`${this.url}/cards`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
         authorization: config.headers.authorization,
       },
-      body: JSON.stringify({ name, link }),
+      body: JSON.stringify({ name, description, image, price }),
     });
   }
 
@@ -64,7 +89,7 @@ class Api {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
-        authorization: config.headers.authorization,
+        authorization: `Bearer ${getCookie('jwt')}`,
       },
     });
   }

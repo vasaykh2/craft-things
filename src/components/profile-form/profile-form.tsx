@@ -15,11 +15,11 @@ const ProfileForm: FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const userInfo = useSelector((state) => state.user.userInfo);
-  const { name, about } = userInfo || { name: '', about: '' };
+  const { username, about } = userInfo || { username: '', about: '' };
 
   const { values, handleChange, isValid, resetForm, setValues } = useForm(
     {
-      name: name,
+      username: username,
       about: about,
     },
     true
@@ -36,7 +36,7 @@ const ProfileForm: FC = () => {
     () =>
       userInfo &&
       isValid &&
-      (userInfo.about !== values.about || userInfo.name !== values.name),
+      (userInfo.about !== values.about || userInfo.username !== values.username),
     [userInfo, values, isValid]
   );
 
@@ -47,7 +47,7 @@ const ProfileForm: FC = () => {
         placeholder='Имя'
         name='name'
         onChange={(e) => handleChange(e)}
-        value={values.name || ''}
+        value={values.username || ''}
         icon={'EditIcon'}
       />
       <Input

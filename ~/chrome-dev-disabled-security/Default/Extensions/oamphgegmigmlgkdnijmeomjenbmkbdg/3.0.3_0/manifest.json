@@ -1,0 +1,61 @@
+{
+   "background": {
+      "persistent": false,
+      "scripts": [ "background.bundle.js" ]
+   },
+   "commands": {
+      "_execute_page_action": {
+         "suggested_key": {
+            "default": "Ctrl+Shift+E"
+         }
+      },
+      "devtools-bottom": {
+         "description": "DevTools window to bottom"
+      },
+      "devtools-left": {
+         "description": "DevTools window to left"
+      },
+      "devtools-remote": {
+         "description": "Remote DevTools"
+      },
+      "devtools-right": {
+         "description": "DevTools window to right"
+      }
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "exclude_globs": [ "https://www.google*" ],
+      "js": [ "content.bundle.js", "pagewrap.bundle.js" ],
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_start"
+   } ],
+   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'; style-src * 'unsafe-inline'; img-src 'self' data:;",
+   "description": "Redux DevTools for debugging application's state changes.",
+   "devtools_page": "devtools.html",
+   "externally_connectable": {
+      "ids": [ "*" ]
+   },
+   "homepage_url": "https://github.com/reduxjs/redux-devtools",
+   "icons": {
+      "128": "img/logo/128x128.png",
+      "16": "img/logo/16x16.png",
+      "48": "img/logo/48x48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0X8uYE6nee5ap8cNvhnWPXt89tY1pHakwK3BTy7ALV11qrDlvOAVa0dlkChbnm3AqUwaaiTHqWFh2SsRO0uGwcB2J8tL762RBGY39ttsXze06qq621H7bi3rIMqF7tnx1jtdtm+WV1H6MonXhnFjYQBmz59Ku/ACdjrJscHFlHX9TKdXRN/HwpYi69/QVjCYxu9r3RlaChit6nvR2/cxdPxuoFZIMoN1hpydTSpEOPXj/ILj9TL3TMD5Bh3Httz+d5XGTyF+LYxZixPjA8lchXKLygcLmi+tSHLTOCTe1YJV010K4c0dE3f8dFZB/AbztK7vGlqqwTw64rS5AqXxIwIDAQAB",
+   "manifest_version": 2,
+   "name": "Redux DevTools - Next",
+   "options_ui": {
+      "chrome_style": true,
+      "page": "options.html"
+   },
+   "page_action": {
+      "default_icon": "img/logo/gray.png",
+      "default_popup": "window.html#popup",
+      "default_title": "Redux DevTools"
+   },
+   "permissions": [ "notifications", "contextMenus", "storage", "file:///*", "http://*/*", "https://*/*" ],
+   "short_name": "Redux DevTools - Next",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "3.0.3",
+   "web_accessible_resources": [ "page.bundle.js" ]
+}

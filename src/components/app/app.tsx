@@ -43,19 +43,22 @@ const App: FC = () => {
         <Route
           path='/'
           element={
-            items.itemsLoad ? (
-              <Oval
-                ariaLabel='loading'
-                height={70}
-                width={70}
-                strokeWidth={5}
-                strokeWidthSecondary={2}
-                color='blue'
-                secondaryColor='white'
-              />
-            ) : items.items ? (
-              <Main />
-            ) : null
+            <ProtectedRouteElement onlyForAuth={true}>
+              <>
+                items.itemsLoad ? (
+                <Oval
+                  ariaLabel='loading'
+                  height={70}
+                  width={70}
+                  strokeWidth={5}
+                  strokeWidthSecondary={2}
+                  color='blue'
+                  secondaryColor='white'
+                />
+                ) : items.items ? (
+                <Main />) : null
+              </>
+            </ProtectedRouteElement>
           }
         />
 
@@ -76,16 +79,15 @@ const App: FC = () => {
             </ProtectedRouteElement>
           }
         >
-          
-              <Route
-                path=''
-                element={
-                  <ProtectedRouteElement onlyForAuth={true}>
-                    <ProfileForm />
-                  </ProtectedRouteElement>
-                }
-              />
-              {/*<Route
+          <Route
+            path=''
+            element={
+              <ProtectedRouteElement onlyForAuth={true}>
+                <ProfileForm />
+              </ProtectedRouteElement>
+            }
+          />
+          {/*<Route
                 path='orders'
                 element={
                   <ProtectedRouteElement onlyForAuth={true}>
@@ -93,7 +95,6 @@ const App: FC = () => {
                   </ProtectedRouteElement>
                 }
               />*/}
-              
         </Route>
       </Routes>
     </div>

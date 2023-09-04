@@ -31,7 +31,7 @@ export function useForm(initialState: TForm, isProfileForm: Boolean) {
       isValidEmail(name === 'email' ? value : values.email) &&
         isValidPassword(name === 'password' ? value : values.password) &&
         isValidToken(name === 'token' ? value : values.token) &&
-        isValidName(name === 'name' ? value : values.name)
+        isValidName(name === 'name' ? value : values.username)
     );
   };
 

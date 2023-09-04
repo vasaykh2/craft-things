@@ -1,5 +1,5 @@
 import { TItem } from './items';
-import { TUser } from './user';
+import { TUserInfo } from './user';
 
 export type TResponse<T> = {
   success: boolean;
@@ -14,6 +14,6 @@ export type TItemsResponse = {
 };
 
 export type TUserResponse = {
-  user: TUser;
+  user: TUserInfo;
 };
 

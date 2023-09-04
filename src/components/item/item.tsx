@@ -1,9 +1,8 @@
 import { FC } from 'react';
-import { useSelector, useDispatch } from '../../types/store';
+import { useSelector, } from '../../types/store';
 
 import styles from './item-styles.module.css';
 //import { useDrag } from 'react-dnd';
-//import { useSelector } from '../../types/store';
 import { Link, useLocation } from 'react-router-dom';
 import { TItem } from '../../types/items';
 
@@ -16,11 +15,12 @@ const Item: FC<TItemProps> = ({ item, onRightClick }) => {
   const location = useLocation();
 
   const { userInfo } = useSelector((state) => state.user);
+  
   const likeCount = item.likes.length;
   const isMyLike = userInfo && item.likes.find(el => el._id === userInfo._id) ? true : false;
 
 
- /* const [, dragRef] = useDrag({
+/* const [, dragRef] = useDrag({
     type: 'items',
     item: { ...item },
     collect: (monitor) => ({

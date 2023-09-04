@@ -5,15 +5,15 @@ import {
 } from '../services/actions/items';
 
 import {
-  TUser
+  TUserInfo
 } from '../types/user';
 
 export type TItem = {
-  likes: TUser[];
+  likes: TUserInfo[];
   _id: string;  
   name: string;
   link: string;
-  owner: TUser;
+  owner: TUserInfo;
   createdAt: string;
 };
 

@@ -1,4 +1,5 @@
 //import React from 'react';
+//import { getCookie } from '../../utils/cookie';
 
 import {
   GET_ITEMS_LIST_REQUEST,
@@ -29,7 +30,7 @@ export const itemsReducer = (
         itemsFailed: false,
       };
     }
-    case GET_ITEMS_LIST_SUCCESS: {
+    case GET_ITEMS_LIST_SUCCESS: {      
       return {
         ...state,
         items: action.payload,
