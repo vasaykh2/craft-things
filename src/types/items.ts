@@ -8,13 +8,15 @@ import {
   TUserInfo
 } from '../types/user';
 
-export type TItem = {
-  likes: TUserInfo[];
-  _id: string;  
-  name: string;
-  link: string;
-  owner: TUserInfo;
+export type TItem = {  
+  id: string;
   createdAt: string;
+  updatedAt: string;
+  name: string;
+  description: string;
+  image: string;
+  price: number;  
+  ordered: number;
 };
 
 export type TGetItemsRequestAction = {

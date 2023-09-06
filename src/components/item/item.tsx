@@ -16,8 +16,8 @@ const Item: FC<TItemProps> = ({ item, onRightClick }) => {
 
   const { userInfo } = useSelector((state) => state.user);
   
-  const likeCount = item.likes.length;
-  const isMyLike = userInfo && item.likes.find(el => el._id === userInfo._id) ? true : false;
+  const ordersCount = item.ordered;
+  const isInMyCart = false;
 
 
 /* const [, dragRef] = useDrag({
@@ -29,20 +29,20 @@ const Item: FC<TItemProps> = ({ item, onRightClick }) => {
   });*/
 
   return (
-    <li /*ref={dragRef}*/ key={item._id} onContextMenu={onRightClick}>
+    <li /*ref={dragRef}*/ key={item.id} onContextMenu={onRightClick}>
       <Link
         className={styles.card}
         to={{
-          pathname: `/items/${item._id}`,
+          pathname: `/items/${item.id}`,
         }}
-        state={{ background: location, idItemDetails: item._id }}
+        state={{ background: location, idItemDetails: item.id }}
       >
-        <img src={item.link} alt={item.name} className={styles.image} />
+        <img src={item.image} alt={item.name} className={styles.image} />
         <div className={styles.description}>
           <h2 className={styles.title}>{item.name}</h2>
           <div className={styles.likes}>
-            <button type="button" className={isMyLike ? styles.buttonMyLikes : styles.buttonLikes}></button>
-            <p className={styles.likeCount}>{likeCount}</p>
+            <button type="button" className={isInMyCart ? styles.buttonMyLikes : styles.buttonLikes}></button>
+            <p className={styles.likeCount}>{ordersCount}</p>
           </div>
         </div>
         <button className={styles.deleteButton}></button>

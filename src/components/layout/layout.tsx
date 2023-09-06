@@ -15,7 +15,7 @@ import styles from './layout-styles.module.css';
 const Layout: FC = () => {
   //const { pathname } = useLocation();
 
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
 
   const { items } = useSelector((state) => state.items);
 
@@ -30,7 +30,7 @@ const Layout: FC = () => {
     <ul className={styles.layout}>
       {items.map(item => item && ( <Item
               item={item}
-              key={item._id}
+              key={item.id}
               onRightClick={(evt) => {
                 evt.preventDefault();
                 handleRightClick(item);
