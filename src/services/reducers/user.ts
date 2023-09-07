@@ -8,6 +8,8 @@ import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
   LOGIN_FAILED,
+  LOGOUT_REQUEST,
+  LOGOUT_SUCCESS,
 } from '../actions/user';
 
 import { TUserState, TUserActions } from '../../types/user';
@@ -94,6 +96,21 @@ export const userReducer = (state = userInitialState, action: TUserActions) => {
         loginRequest: false,
         loginFailed: true,
         message: action.payload,
+      };
+      case LOGOUT_REQUEST:
+      return {
+        ...state,
+        userInfo: null,
+        loginRequest: false,
+        loginFailed: false,
+        isAuthChecked: false,
+        logoutRequest: true,
+      };
+    case LOGOUT_SUCCESS:
+      return {
+        ...state,
+        logoutRequest: false,
+        logoutFailed: false,
       };
     default:
       return state;

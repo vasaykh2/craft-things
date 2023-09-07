@@ -3,6 +3,9 @@ import {
   GET_ITEMS_LIST_FAILED,
   GET_ITEMS_LIST_SUCCESS,
 } from '../services/actions/items';
+import {
+  LOGOUT_REQUEST,  
+} from '../services/actions/user';
 
 import {
   TUserInfo
@@ -35,10 +38,15 @@ export type TGetItemsFailedAction = {
 export type TItemsActions =
   | TGetItemsRequestAction
   | TGetItemsSuccessAction
-  | TGetItemsFailedAction;
+  | TGetItemsFailedAction
+  | TLogoutRequestAction;
 
 export type TItemsState = {
   items: Array<TItem>;
   itemsLoad: boolean;
   itemsFailed: boolean;
+};
+
+type TLogoutRequestAction = {
+  readonly type: typeof LOGOUT_REQUEST;
 };

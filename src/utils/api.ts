@@ -33,7 +33,7 @@ class Api {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
-        authorization: config.headers.authorization,
+        authorization: `Bearer ${getCookie('jwt')}`,
       },
     });
     //console.log(getCookie('jwt'));
@@ -57,10 +57,6 @@ class Api {
       },
       body: JSON.stringify({ username, password }),
     });
-  }
-
-  logOut() {
-    sessionStorage.removeItem("auth_token");
   }
 
   async postItems(name: string, description: string,  image: string, price: number) {

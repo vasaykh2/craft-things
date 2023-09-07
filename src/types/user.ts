@@ -8,6 +8,8 @@ import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
   LOGIN_FAILED,
+  LOGOUT_REQUEST,
+  LOGOUT_SUCCESS,
 } from '../services/actions/user';
 
 export type TUserActions =
@@ -17,6 +19,8 @@ export type TUserActions =
   | TLoginRequestAction
   | TLoginSuccessAction
   | TLoginFailedAction
+  | TLogoutRequestAction
+  | TLogoutSuccessAction 
   | TPatchUserRequestAction
   | TPatchUserSuccessAction
   | TPatchUserFailedAction;
@@ -31,13 +35,13 @@ export type TForm = {
   token?: string;
 };
 
-export type TRegisterForm = Required<
-  Omit<TForm, 'token'>
->;
+export type TRegisterForm = Required<Omit<TForm, 'token'>>;
 
 export type TUserInfo = Required<Omit<TForm, 'token' | 'password'>>;
 
-export type TLoginForm = Required<Omit<TForm, 'token' | 'name' | '_id' | 'about' | 'avatar'>>;
+export type TLoginForm = Required<
+  Omit<TForm, 'token' | 'name' | '_id' | 'about' | 'avatar'>
+>;
 
 export type TUserState = {
   userInfo: TUserInfo | null;
@@ -101,4 +105,12 @@ type TLoginSuccessAction = {
 type TLoginFailedAction = {
   readonly type: typeof LOGIN_FAILED;
   readonly payload: string;
+};
+
+type TLogoutRequestAction = {
+  readonly type: typeof LOGOUT_REQUEST;
+};
+
+type TLogoutSuccessAction = {
+  readonly type: typeof LOGOUT_SUCCESS;
 };

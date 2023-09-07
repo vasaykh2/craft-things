@@ -1,14 +1,14 @@
 import { useEffect, FC } from 'react';
 import { NavLink, useLocation, Outlet, useNavigate } from 'react-router-dom';
-//import { useDispatch } from '../../types/store';
+import { useDispatch } from '../../types/store';
 
 import { Button } from '@ya.praktikum/react-developer-burger-ui-components';
-//import { getUserInfo } from '../../services/actions/user';
+import { logOut } from '../../services/actions/user';
 
 import styles from './profile.module.css';
 
 const Profile: FC = () => {
-  //const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
   const { pathname } = location;
@@ -25,7 +25,7 @@ const Profile: FC = () => {
   };
 
   const handleLogout = () => {
-    //dispatch(logOut());
+    dispatch(logOut());
     localStorage.setItem('stateFrom', '');
     navigate('/login', {
       state: { from: { pathname: '/login' } },

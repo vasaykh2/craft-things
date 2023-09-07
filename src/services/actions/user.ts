@@ -16,6 +16,10 @@ export const LOGIN_REQUEST: 'LOGIN_REQUEST' = 'LOGIN_REQUEST';
 export const LOGIN_SUCCESS: 'LOGIN_SUCCESS' = 'LOGIN_SUCCESS';
 export const LOGIN_FAILED: 'LOGIN_FAILED' = 'LOGIN_FAILED';
 
+export const LOGOUT_REQUEST: 'LOGOUT_REQUEST' = 'LOGOUT_REQUEST';
+export const LOGOUT_SUCCESS: 'LOGOUT_SUCCESS' = 'LOGOUT_SUCCESS';
+export const LOGOUT_FAILED: 'LOGOUT_FAILED' = 'LOGOUT_FAILED';
+
 export const getUserInfo: AppThunk = () => {
   return function (dispatch: AppDispatch | AppThunk) {
     dispatch({
@@ -60,7 +64,7 @@ export const logIn: AppThunk = ({ username, password }: TLoginForm) => {
         });
         //console.log(res.access_token)
       })
-      .then(()=> {
+      .then(() => {
         //console.log(getCookie('jwt'));
         //getUserInfo();
       })
@@ -82,6 +86,19 @@ export const logIn: AppThunk = ({ username, password }: TLoginForm) => {
         }
       });*/
     //console.log(getCookie('jwt'));
+  };
+};
+
+export const logOut: AppThunk = () => {
+  return function (dispatch: AppDispatch) {
+    dispatch({
+      type: LOGOUT_REQUEST,
+    });
+    localStorage.removeItem('refreshToken');
+    deleteCookie('jwt');
+    dispatch({
+      type: LOGOUT_SUCCESS,
+    });
   };
 };
 

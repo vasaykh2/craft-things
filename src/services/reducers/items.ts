@@ -6,11 +6,11 @@ import {
   GET_ITEMS_LIST_FAILED,
   GET_ITEMS_LIST_SUCCESS,
 } from '../actions/items';
-
 import {
-  TItemsActions,
-  TItemsState,
-} from '../../types/items';
+  LOGOUT_REQUEST,  
+} from '../actions/user';
+
+import { TItemsActions, TItemsState } from '../../types/items';
 
 const itemsInitialState: TItemsState = {
   itemsLoad: false,
@@ -30,7 +30,7 @@ export const itemsReducer = (
         itemsFailed: false,
       };
     }
-    case GET_ITEMS_LIST_SUCCESS: {      
+    case GET_ITEMS_LIST_SUCCESS: {
       return {
         ...state,
         items: action.payload,
@@ -45,6 +45,13 @@ export const itemsReducer = (
         itemsLoad: false,
       };
     }
+    case LOGOUT_REQUEST:
+      return {
+        ...state,
+        itemsLoad: false,
+        itemsFailed: false,
+        items: [],
+      };
     default: {
       return state;
     }
