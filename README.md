@@ -1,2 +1,2 @@
 # craft-things
-pet-project in production
+pet-project in the process of development
